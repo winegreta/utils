@@ -26,6 +26,7 @@ def sql_to_df(username, password, url, port, db_name, query):
     con = connect_to_postgres(username, password, url, port, db_name)
     if con:
         df = pd.read_sql_query(query, con)
+        con.close()
         return df
     else:
         print('Не удалось подключиться')
