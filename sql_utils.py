@@ -1,5 +1,6 @@
 import psycopg2
 from psycopg2 import sql
+import pandas as pd
 
 def connect_to_postgres(username, password, url, port, db_name):
     try:
